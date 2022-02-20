@@ -1,0 +1,19 @@
+{
+    "name": "piece-wars",
+    "version": "0.0.1a",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "sass": "sass front\\style\\main.scss front\\static\\main.css --watch",
+        "minify": "node utils/minify.js --watch",
+        "everything": "tsc --build & sass front\\style\\main.scss front\\static\\main.css & node utils/minify.js",
+        "start": "node index.js"
+    },
+    "author": "Kawyn",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.2",
+        "socket.io": "^4.4.1",
+        "uglify-js": "^3.15.1"
+    }
+}

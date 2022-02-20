@@ -1,0 +1,4 @@
+const about = {
+    template: ``,
+}
+

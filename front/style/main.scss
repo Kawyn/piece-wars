@@ -1,0 +1,85 @@
+:root {
+    --color-primary: #eeeed2;
+    --color-secondary: #769656;
+}
+
+#squares {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(8, 100px);
+    grid-auto-rows: minmax(100px, auto);
+}
+.square-primary {
+    overflow: hidden;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    cursor: pointer;
+}
+.square-primary-v {
+    position: relative;
+
+    overflow: hidden;
+    background-color: red;
+}
+
+.square-secondary-v {
+    position: relative;
+
+    overflow: hidden;
+    background-color: red;
+}
+.square-secondary {
+    background-color: var(--color-secondary);
+    position: relative;
+
+    overflow: hidden;
+    color: var(--color-primary);
+}
+
+%dot {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 50%;
+    height: 50%;
+
+    border-radius: 50%;
+
+    opacity: 0.3;
+}
+
+%dot-piece {
+    @extend %dot;
+    width: 110%;
+    height: 110%;
+}
+
+.dot {
+    &-primary {
+        @extend %dot;
+        background-color: red;
+    }
+
+    &-secondary {
+        @extend %dot;
+        background-color: green;
+    }
+
+    &-piece {
+        &-primary {
+            @extend %dot-piece;
+            border: solid red 100%;
+        }
+
+        &-secondary {
+            @extend %dot-piece;
+            border: solid green 100%;
+        }
+    }
+}
